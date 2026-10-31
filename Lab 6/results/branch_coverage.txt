@@ -1,0 +1,42 @@
+$ python -m coverage run --branch --source=ski_resort_pass -m pytest BranchCoverageTest_ski_resort_pass.py -v
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- /home/aaryatedla/Documents/Projects/se lab/lab06/L6_L7_08_ski_resort_pass/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaryatedla/Documents/Projects/se lab/lab06/L6_L7_08_ski_resort_pass/Lab 6
+configfile: pytest.ini
+collecting ... collected 22 items
+
+BranchCoverageTest_ski_resort_pass.py::test_invalid_groups PASSED        [  4%]
+BranchCoverageTest_ski_resort_pass.py::test_all_pass_rates_and_extras PASSED [  9%]
+BranchCoverageTest_ski_resort_pass.py::test_audit_review PASSED          [ 13%]
+BranchCoverageTest_ski_resort_pass.py::test_zero_sales PASSED            [ 18%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_status[streams0-NO_DATA] PASSED [ 22%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_status[streams1-SAFE_OPERATION] PASSED [ 27%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_status[streams2-SUSPEND_LIFT] PASSED [ 31%]
+BranchCoverageTest_ski_resort_pass.py::test_negative_facility_fee PASSED [ 36%]
+BranchCoverageTest_ski_resort_pass.py::test_age_boundaries[1-48] PASSED  [ 40%]
+BranchCoverageTest_ski_resort_pass.py::test_age_boundaries[11-48] PASSED [ 45%]
+BranchCoverageTest_ski_resort_pass.py::test_age_boundaries[12-80] PASSED [ 50%]
+BranchCoverageTest_ski_resort_pass.py::test_age_boundaries[64-80] PASSED [ 54%]
+BranchCoverageTest_ski_resort_pass.py::test_age_boundaries[65-56] PASSED [ 59%]
+BranchCoverageTest_ski_resort_pass.py::test_empty_group_and_default_inactive PASSED [ 63%]
+BranchCoverageTest_ski_resort_pass.py::test_four_rejections_do_not_trigger_audit PASSED [ 68%]
+BranchCoverageTest_ski_resort_pass.py::test_half_day_child_rental_and_locker PASSED [ 72%]
+BranchCoverageTest_ski_resort_pass.py::test_blackout_full_day_with_rental PASSED [ 77%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_streak_resets_and_threshold[streams0] PASSED [ 81%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_streak_resets_and_threshold[streams1] PASSED [ 86%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_streak_resets_and_threshold[streams2] PASSED [ 90%]
+BranchCoverageTest_ski_resort_pass.py::test_wind_streak_resets_and_threshold[streams3] PASSED [ 95%]
+BranchCoverageTest_ski_resort_pass.py::test_suspension_on_later_lift PASSED [100%]
+
+============================== 22 passed in 0.04s ==============================
+
+$ python -m coverage report -m
+Name                 Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------
+ski_resort_pass.py      59      0     42      0   100%
+----------------------------------------------------------------
+TOTAL                   59      0     42      0   100%
+
+$ python -m coverage json -o results/branch_coverage.json
+

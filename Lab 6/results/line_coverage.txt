@@ -1,0 +1,26 @@
+$ python -m coverage run --source=ski_resort_pass -m pytest CodeCoverageTest_ski_resort_pass.py -v
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- /home/aaryatedla/Documents/Projects/se lab/lab06/L6_L7_08_ski_resort_pass/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/aaryatedla/Documents/Projects/se lab/lab06/L6_L7_08_ski_resort_pass/Lab 6
+collecting ... collected 7 items
+
+CodeCoverageTest_ski_resort_pass.py::test_invalid_groups PASSED          [ 14%]
+CodeCoverageTest_ski_resort_pass.py::test_all_pass_rates_and_extras PASSED [ 28%]
+CodeCoverageTest_ski_resort_pass.py::test_audit_review PASSED            [ 42%]
+CodeCoverageTest_ski_resort_pass.py::test_zero_sales PASSED              [ 57%]
+CodeCoverageTest_ski_resort_pass.py::test_wind_status[streams0-NO_DATA] PASSED [ 71%]
+CodeCoverageTest_ski_resort_pass.py::test_wind_status[streams1-SAFE_OPERATION] PASSED [ 85%]
+CodeCoverageTest_ski_resort_pass.py::test_wind_status[streams2-SUSPEND_LIFT] PASSED [100%]
+
+============================== 7 passed in 0.02s ===============================
+
+$ python -m coverage report -m
+Name                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+ski_resort_pass.py      59      0   100%
+--------------------------------------------------
+TOTAL                   59      0   100%
+
+$ python -m coverage json -o results/line_coverage.json
+
